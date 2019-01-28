@@ -1,0 +1,18 @@
+<p>
+  socket works!
+</p>
+
+<div *ngFor="let m of messages">
+  {{m}}
+</div>
+
+<input [(ngModel)]="message" (keyup)="$event.keyCode == 13 && sendMessage()" />
+<button (click)="sendMessage()">Send</button>
+
+<div *ngFor="let m of messages1">
+  {{m}}
+</div>
+
+<input [(ngModel)]="message1" (keyup)="$event.keyCode == 13 && sendMessage()" />
+<button (click)="sendMessage1()">Send</button>
+<app-toast></app-toast>

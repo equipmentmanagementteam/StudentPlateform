@@ -1,0 +1,44 @@
+
+<div  class="card text-black bg-light mb-3" style="width: auto;">
+  <div class="card-header">
+    <h2>Your Commands</h2>
+  </div>
+  <div class="card-body">
+  
+    <table class="table">
+        <thead>
+          <tr>
+            <th>ref</th>
+            <th>equipment</th>
+            <th>quantity</th>
+            <th>Date of the Command</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+              <tr *ngFor="let  command of myCommands">
+                     
+                      <td>
+                          {{command.ref}}
+                      </td>
+                      
+                      <td>
+                        {{command.equipement.name}}
+                    </td>
+                    <td>
+                      {{command.quantity}}
+                  </td>
+                  <td>
+                    {{command.date}}
+                </td>
+                <td>
+                  {{command.student.name}} {{command.student.lastname}}
+                </td>
+                 
+                 </tr>
+        </tbody>
+      </table>
+ 
+  </div>
+
+</div>

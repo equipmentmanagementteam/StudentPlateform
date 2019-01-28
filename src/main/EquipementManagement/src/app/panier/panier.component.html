@@ -1,0 +1,44 @@
+
+<div class="card text-white bg-dark mb-3" style="width: auto;">
+  <div class="card-header">
+    <h2>Your Cart</h2>
+    <p style="float: right;"> date: {{date}} </p>
+  </div>
+  <div class="card-body">
+  
+    <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+              <tr *ngFor="let  eq of selectedEquipements">
+                     
+                      <td>
+                          {{eq.name}}
+                      </td>
+                      
+                      <td>
+              
+                            <input  type="number" [(ngModel)]="eq.quan" max="eq.max" max="eq.max">
+                            <p *ngIf="eq.quan > eq.max" >
+                              You have depassed the maximum permitted
+                             
+                            </p>
+                         
+                    </td>
+                   <td>
+                    <button type="button" (click)="removeFromList(eq)" class="btn btn-danger" style="margin-left:50%;">remove</button>
+                   </td>
+                 </tr>
+        </tbody>
+      </table>
+ 
+  </div>
+  <div class="card-footer">
+    <button type="button" (click)="onCommand()" class="btn btn-success" style="margin-left:35%;">Submit</button>
+  </div>
+</div>
